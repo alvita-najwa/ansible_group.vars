@@ -12,13 +12,6 @@
         update_cache: yes
       when: install_apache | default(false)
 
-#    - name: Ensure Apache is running and enabled
-#      service:
-#        name: apache2
-#        state: started
-#        enabled: yes
-#      when: install_apache | default(false) and not uninstall_apache | default(false)
-
     - name: Uninstall Apache
       apt:
         name: apache2
