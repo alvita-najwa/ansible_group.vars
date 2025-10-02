@@ -1,0 +1,5 @@
+user_name: user1
+install_apache: true
+uninstall_apache: true
+install_nginx: true
+html_message: "Selamat datang ke {{ ansible_hostname }}"

@@ -1,0 +1,3 @@
+- name: Buat user baru
+  user:
+    name: "{{ user_name }}"
