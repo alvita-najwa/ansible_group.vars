@@ -10,22 +10,24 @@
         name: apache2
         state: present
         update_cache: yes
-      when: install_apache | default(false)
+      when: install_apache | bool
 
     - name: Uninstall Apache
       apt:
         name: apache2
         state: absent
-      when: uninstall_apache | default(false)
+      when: uninstall_apache | bool
 
     - name: Install Nginx
       apt:
         name: nginx
         state: present
         update_cache: yes
-      when: install_nginx | default(false)
+      when: install_nginx | bool
 
     - name: Ganti HTML pakai template
       template:
         src: index.html.j2
         dest: /var/www/html/index.html
+      vars:
+        message: "{{ html-message }}" 
